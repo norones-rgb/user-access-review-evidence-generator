@@ -1,0 +1,12 @@
+{
+  "ReviewId": "UAR-2026-Q4",
+  "ReviewDueUtc": "2026-11-01T23:59:59Z",
+  "ExpectedApplications": [
+    "FinanceERP",
+    "CodeRepo",
+    "CRM"
+  ],
+  "SourceMaxAgeDays": 14,
+  "TerminationGraceDays": 2,
+  "RevocationGraceDays": 2
+}

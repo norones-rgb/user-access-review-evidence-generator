@@ -1,0 +1,33 @@
+name: PowerShell UAR evidence CI
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  pester:
+    name: Pester (${{ matrix.os }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    defaults:
+      run:
+        shell: pwsh
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Pester 5
+        run: |
+          Install-Module Pester -MinimumVersion 5.5.0 -Scope CurrentUser -Force -SkipPublisherCheck -ErrorAction Stop
+          Import-Module Pester -MinimumVersion 5.5.0 -ErrorAction Stop
+      - name: Validate Pester tests
+        run: |
+          Import-Module Pester -MinimumVersion 5.5.0
+          Invoke-Pester -Path ./tests -CI -Output Detailed
+      - name: Run demonstration and verify outputs
+        run: |
+          ./Invoke-UserAccessReview.ps1 -Mode Demo -OutputDirectory ./output/ci-demo
+          foreach ($name in @('uar-findings.csv','uar-entitlement-evidence.csv','uar-evidence.json','uar-dashboard.html')) {
+            if (-not (Test-Path (Join-Path ./output/ci-demo $name))) { throw "Missing report: $name" }
+          }

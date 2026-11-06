@@ -1,0 +1,7 @@
+# Runtime output includes potentially sensitive access and HR evidence
+/output/*
+!/output/.gitkeep
+*.log
+.DS_Store
+Thumbs.db
+*.tmp

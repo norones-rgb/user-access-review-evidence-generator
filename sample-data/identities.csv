@@ -1,0 +1,11 @@
+IdentityId,DisplayName,EmploymentStatus,ManagerId,TerminationDateUtc,Department
+U001,Amara Cole,Active,M001,,Sales
+U002,Benoit Lane,Terminated,M002,2026-10-20T09:00:00Z,Finance
+U003,Celia Hart,Active,M003,,Engineering
+U004,Dawit Rose,Inactive,M001,,Operations
+U005,Elena Brooks,Active,,,Security
+U006,Fanta Ndao,Active,M003,,Engineering
+U007,Gabe Singh,Terminated,M004,2026-11-04T12:00:00Z,Sales
+U008,Hani Carter,Active,M005,,Finance
+U009,Imani Ellis,Active,M005,,Customer Support
+U010,Jonas Reed,Active,M002,,Platform

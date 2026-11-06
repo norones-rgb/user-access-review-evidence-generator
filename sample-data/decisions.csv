@@ -1,0 +1,14 @@
+ReviewId,EntitlementId,Decision,ReviewerId,DecisionAtUtc,TicketId,Note
+UAR-2026-Q4,E001,Approve,RV001,2026-10-28T15:00:00Z,,Business access
+UAR-2026-Q4,E002,Revoke,RV002,2026-10-22T11:00:00Z,IT-3001,Access should be removed
+UAR-2026-Q4,E004,Approve,RV001,2026-10-30T15:00:00Z,,Review recorded; HR mismatch remains
+UAR-2026-Q4,E005,Approve,RV003,2026-10-30T12:00:00Z,,Needs manager attribution
+UAR-2026-Q4,E006,Pending,RV003,2026-10-29T12:00:00Z,,Awaiting decision
+UAR-2026-Q4,E007,Revoke,RV004,2026-11-04T13:00:00Z,IT-3007,Within remediation grace
+UAR-2026-Q4,E008,Revoke,RV005,2026-10-28T14:00:00Z,IT-3008,Disabled in export
+UAR-2026-Q4,E009,Exception,RV005,2026-10-29T10:00:00Z,,Missing exception reference
+UAR-2026-Q4,E010,Approve,RV002,2026-10-30T18:00:00Z,,New since baseline
+UAR-2026-Q4,E012,Pending,RV003,2026-10-28T12:00:00Z,,Privileged review still pending
+UAR-2026-Q4,E013,Approve,RV005,2026-10-30T19:00:00Z,,Recorded review
+UAR-2026-Q4,E014,Approve,RV003,2026-10-30T19:00:00Z,,Unknown identity must be correlated
+UAR-2026-Q4,E015,Approve,RV002,2026-10-30T19:00:00Z,,Application not in manifest

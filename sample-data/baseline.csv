@@ -1,0 +1,11 @@
+EntitlementId,IdentityId,Application,Resource,Privilege
+E001,U001,CRM,SalesRead,Standard
+E002,U002,FinanceERP,BillingAdmin,Privileged
+E004,U004,CRM,CustomerExport,Standard
+E005,U005,FinanceERP,SecurityAdmin,Privileged
+E006,U006,CodeRepo,ProjectWrite,Standard
+E007,U007,CRM,FieldRead,Standard
+E008,U008,FinanceERP,AccountingRead,Standard
+E009,U009,CRM,AccountsRead,Standard
+E011,U001,FinanceERP,ARAnalyst,Standard
+E013,U009,CRM,ExportAudit,Standard

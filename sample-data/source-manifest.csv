@@ -1,0 +1,4 @@
+Application,ExportedAtUtc,IsComplete,CoverageNote
+FinanceERP,2026-11-04T19:00:00Z,True,Finance platform direct active/disabled export
+CodeRepo,2026-10-17T12:00:00Z,True,Stale scoped export from repository platform
+CRM,2026-11-04T19:00:00Z,False,Demo deliberately omits one division

@@ -1,0 +1,16 @@
+EntitlementId,IdentityId,Application,Resource,Privilege,Status,ObservedAtUtc,SourceSystem
+E001,U001,CRM,SalesRead,Standard,Active,2026-11-04T18:00:00Z,CRMExport
+E002,U002,FinanceERP,BillingAdmin,Privileged,Active,2026-11-04T18:00:00Z,FinanceAccess
+E003,U003,CodeRepo,OrgOwners,Privileged,Active,2026-10-16T09:00:00Z,RepoExport
+E004,U004,CRM,CustomerExport,Standard,Active,2026-11-04T18:00:00Z,CRMExport
+E005,U005,FinanceERP,SecurityAdmin,Privileged,Active,2026-11-04T18:00:00Z,FinanceAccess
+E006,U006,CodeRepo,ProjectWrite,Standard,Active,2026-10-16T09:00:00Z,RepoExport
+E007,U007,CRM,FieldRead,Standard,Active,2026-11-04T18:00:00Z,CRMExport
+E008,U008,FinanceERP,AccountingRead,Standard,Disabled,2026-11-04T18:00:00Z,FinanceAccess
+E009,U009,CRM,AccountsRead,Standard,Active,2026-11-04T18:00:00Z,CRMExport
+E010,U010,CodeRepo,ReadOnly,Standard,Active,2026-10-16T09:00:00Z,RepoExport
+E011,U001,FinanceERP,ARAnalyst,Standard,Active,2026-11-04T18:00:00Z,FinanceAccess
+E012,U006,CodeRepo,AdminTeam,Privileged,Active,2026-10-16T09:00:00Z,RepoExport
+E013,U009,CRM,ExportAudit,Standard,Active,2026-11-04T18:00:00Z,CRMExport
+E014,U404,CodeRepo,APIAdmin,Privileged,Active,2026-10-16T09:00:00Z,RepoExport
+E015,U010,Messaging,AppAdmin,Privileged,Active,2026-11-04T18:00:00Z,MessagingExport
