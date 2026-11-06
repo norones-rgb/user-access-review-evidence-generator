@@ -4,8 +4,17 @@ $ErrorActionPreference = 'Stop'
 
 function ConvertTo-UarUtc {
     [CmdletBinding()]
-    param([Parameter(Mandatory)][string]$Value, [Parameter(Mandatory)][string]$Field)
-    if ($Value -cnotmatch '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$') {
+    param([Parameter(Mandatory)][object]$Value, [Parameter(Mandatory)][string]$Field)
+    # ConvertFrom-Json -AsHashtable may materialize ISO-8601 UTC config values
+    # as DateTime. Preserve that UTC instant rather than culture-formatting it.
+    if ($Value -is [datetime]) {
+        if ($Value.Kind -eq [DateTimeKind]::Unspecified) {
+            throw "$Field must contain an explicit timezone."
+        }
+        return $Value.ToUniversalTime()
+    }
+    if ($Value -is [datetimeoffset]) { return $Value.UtcDateTime }
+    if ([string]$Value -cnotmatch '^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?Z$') {
         throw "$Field must be an ISO 8601 UTC timestamp ending in Z (example: 2026-11-05T12:00:00Z)."
     }
     try { return [datetimeoffset]::Parse($Value, [Globalization.CultureInfo]::InvariantCulture).UtcDateTime }
@@ -45,7 +54,7 @@ function Assert-UarInput {
         if (-not $Config.Contains($key)) { throw "Configuration is missing $key." }
     }
     if ([string]::IsNullOrWhiteSpace([string]$Config['ReviewId'])) { throw 'ReviewId cannot be blank.' }
-    $due = ConvertTo-UarUtc -Value ([string]$Config['ReviewDueUtc']) -Field 'ReviewDueUtc'
+    $due = ConvertTo-UarUtc -Value $Config['ReviewDueUtc'] -Field 'ReviewDueUtc'
     $expectedApps = @($Config['ExpectedApplications'])
     if ($expectedApps.Count -lt 1) { throw 'ExpectedApplications must contain at least one application.' }
     $appSet = [Collections.Generic.HashSet[string]]::new([StringComparer]::OrdinalIgnoreCase)
