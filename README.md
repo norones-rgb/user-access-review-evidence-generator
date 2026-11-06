@@ -1,5 +1,12 @@
 # User Access Review Evidence Generator
 
+> **IAM Automation Toolkit · Project 5/5** | Read-only PowerShell evaluation MVP · Synthetic-first design
+>
+> [**Portfolio directory**](https://github.com/norones-rgb/ad-ldap-exception-risk-analyzer/blob/main/IAM-AUTOMATION-PORTFOLIO.md) · [**Run the demo**](DEMO.md) · [**Sample HTML preview**](docs/fixture-preview.html) · [**Windows/Linux CI**](https://github.com/norones-rgb/user-access-review-evidence-generator/actions/workflows/ci.yml)
+>
+> [![Pester CI](https://github.com/norones-rgb/user-access-review-evidence-generator/actions/workflows/ci.yml/badge.svg)](https://github.com/norones-rgb/user-access-review-evidence-generator/actions/workflows/ci.yml) · PowerShell 7.2+ · CSV / JSON / offline HTML output
+
+
 **PowerShell 7.2+ · Read-only identity governance control · Synthetic-first portfolio project**
 
 Produces evidence for **User Access Review (UAR)** campaigns from exported identities, entitlements, reviewer decisions, application-source manifests, and optional prior-review baseline. It flags unresolved or potentially risky conditions without changing any directory, account, or application authorization.
